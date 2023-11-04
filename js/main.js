@@ -6,8 +6,8 @@ class section {
     this.section = this.createNewHtmlElement();
     this.header = this.section.querySelector(".section__header");
     this.dateInput = this.section.querySelector(".section__date-input");
-    // this.addHeaderEvent();
-    // this.addDateEvent();
+    this.addHeaderEvent();
+    this.addDateEvent();
   }
 
   createNewHtmlElement() {

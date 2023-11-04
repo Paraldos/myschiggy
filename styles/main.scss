@@ -23,3 +23,16 @@ main {
   position: relative;
   min-height: 100vh;
 }
+
+header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color__headings--secondary);
+  color: var(--color__headings--primary);
+  padding: 10px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
