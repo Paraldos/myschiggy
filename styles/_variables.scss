@@ -1,15 +1,23 @@
 :root {
-  /* colors general */
-  --color__one: #363062;
-  --color__two: #435585;
-  --color__three: #818fb4;
-  --color__four: #f5e8c7;
-
-  /* colors detail */
-  --color__background: var(--color__four);
-  --color__text: var(--color__one);
-  --color__header--background: var(--color__one);
-  --color__header--text: var(--color__four);
+  /* ====================== colors ====================== */
+  --color__one: #f1f6f9;
+  --color__two: #394867;
+  --color__three: #212a3e;
+  --color__four: #9ba4b5;
+  /* basics */
+  --color__background: var(--color__one);
+  --color__text: var(--color__three);
+  /* header */
+  --color__header--background: var(--color__three);
+  --color__header--text: var(--color__one);
+  /* headings */
+  --color__headings--primary: var(--color__one);
+  --color__headings--secondary: var(--color__two);
+  /* hr */
+  --color__hr: var(--color__three);
+  /* button*/
+  --color__button--primary: var(--color__two);
+  --color__button--secondary: var(--color__one);
 
   /* sizes */
   --header-height: 100px;

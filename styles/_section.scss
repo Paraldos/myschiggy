@@ -1,0 +1,72 @@
+section {
+  max-width: 970px;
+  margin: auto;
+  margin-top: 15px;
+  padding: 0 10px;
+
+  .planner {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--color__hr);
+
+    & div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    &__input {
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      font-size: 1.5rem;
+      border: 2px solid var(--color__button--primary);
+      border-radius: 0;
+      padding: 5px 10px;
+      background-color: transparent;
+      color: var(--color__button--primary);
+    }
+  }
+
+  table {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+
+    th,
+    td {
+      width: 50%;
+    }
+
+    th {
+      font-size: 1.2rem;
+    }
+
+    td {
+      padding: 5px 0;
+    }
+  }
+
+  .controlls {
+    @include flexCenter;
+    justify-content: space-evenly;
+    margin: 15px 0;
+
+    padding-top: 15px;
+    border-top: 2px solid var(--color__hr);
+  }
+}
+
+.disabled {
+  .planner {
+    display: none;
+  }
+  .overview {
+    display: none;
+  }
+  .controlls {
+    display: none;
+  }
+}
