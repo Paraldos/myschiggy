@@ -80,6 +80,8 @@ section .planner__input {
   padding: 5px 10px;
   background-color: transparent;
   color: var(--color__button--primary);
+  width: -moz-fit-content;
+  width: fit-content;
 }
 section table {
   margin-top: 20px;
