@@ -1,23 +1,30 @@
 :root {
   /* colors general */
-  --color__brown--dark: #554b2d;
-  --color__brown--middle: #837345;
-  --color__brown--light: #dad1b8;
-  --color__black: #101010;
-  --color__white: #f0f0f0;
+  --color__one: #363062;
+  --color__two: #435585;
+  --color__three: #818fb4;
+  --color__four: #f5e8c7;
   /* colors detail */
-  --color__background: var(--color__white);
-  --color__text: var(--color__black);
-  --color__header--background: var(--color__black);
-  --color__header--text: var(--color__white);
-  --color__heading--background: var(--color__brown--dark);
-  --color__heading--text: var(--color__white);
-  --color__button: var(--color__black);
+  --color__background: var(--color__four);
+  --color__text: var(--color__one);
+  --color__header--background: var(--color__one);
+  --color__header--text: var(--color__four);
   /* sizes */
   --header-height: 100px;
   --footer-height: 100px;
-  /* Lineheight */
-  --line-height-default: 8px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: var(--header-height);
+  width: 100%;
+  background-color: var(--color__header--background);
+  color: var(--color__header--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 *,
@@ -45,4 +52,5 @@ section {
   max-width: 970px;
   margin: auto;
   margin-top: 30px;
+  padding: 10px;
 }/*# sourceMappingURL=main.css.map */
