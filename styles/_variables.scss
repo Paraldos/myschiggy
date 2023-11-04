@@ -1,0 +1,24 @@
+:root {
+  /* colors general */
+  --color__brown--dark: #554b2d;
+  --color__brown--middle: #837345;
+  --color__brown--light: #dad1b8;
+  --color__black: #101010;
+  --color__white: #f0f0f0;
+
+  /* colors detail */
+  --color__background: var(--color__white);
+  --color__text: var(--color__black);
+  --color__header--background: var(--color__black);
+  --color__header--text: var(--color__white);
+  --color__heading--background: var(--color__brown--dark);
+  --color__heading--text: var(--color__white);
+  --color__button: var(--color__black);
+
+  /* sizes */
+  --header-height: 100px;
+  --footer-height: 100px;
+
+  /* Lineheight */
+  --line-height-default: 8px;
+}
