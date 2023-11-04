@@ -2,7 +2,6 @@ section {
   max-width: 970px;
   margin: auto;
   margin-top: 15px;
-  padding: 0 10px;
 
   .section__header {
     background-color: var(--color__headings--secondary);
@@ -13,16 +12,15 @@ section {
     width: 100%;
   }
 
-  .planner {
+  .basics {
     padding-bottom: 15px;
-    border-bottom: 2px solid var(--color__hr);
+    border-bottom: 2px solid var(--color__seciton--border);
     @include flexCenter;
     flex-direction: column;
     gap: 15px;
 
     & div {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      @include flexCenter;
       gap: 30px;
       width: 100%;
       align-items: center;
@@ -45,7 +43,7 @@ section {
   }
 
   table {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%;
     text-align: center;
 
@@ -66,15 +64,15 @@ section {
   .controlls {
     @include flexCenter;
     justify-content: space-evenly;
-    margin: 15px 0;
+    margin: 10px 0;
 
     padding-top: 15px;
-    border-top: 2px solid var(--color__hr);
+    border-top: 2px solid var(--color__seciton--border);
   }
 }
 
 .disabled {
-  .planner {
+  .basics {
     display: none;
   }
   .overview {

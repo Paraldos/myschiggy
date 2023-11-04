@@ -5,7 +5,7 @@ class section {
     this.template = document.querySelector(".section-template");
     this.section = this.createNewHtmlElement();
     this.header = this.section.querySelector(".section__header");
-    this.dateInput = this.section.querySelector(".section__date-input");
+    this.dateInput = this.section.querySelector(".basics__date-input");
     this.addHeaderEvent();
     this.addDateEvent();
   }

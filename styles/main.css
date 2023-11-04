@@ -13,6 +13,8 @@
   /* button*/
   --color__button--primary: var(--color__two);
   --color__button--secondary: var(--color__one);
+  /* section */
+  --color__seciton--border: var(--color__three);
 }
 
 h1,
@@ -58,7 +60,6 @@ section {
   max-width: 970px;
   margin: auto;
   margin-top: 15px;
-  padding: 0 10px;
 }
 section .section__header {
   background-color: var(--color__headings--secondary);
@@ -68,23 +69,24 @@ section .section__header {
   text-transform: uppercase;
   width: 100%;
 }
-section .planner {
+section .basics {
   padding-bottom: 15px;
-  border-bottom: 2px solid var(--color__hr);
+  border-bottom: 2px solid var(--color__seciton--border);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 15px;
 }
-section .planner div {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+section .basics div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 30px;
   width: 100%;
   align-items: center;
 }
-section .planner div h3 {
+section .basics div h3 {
   text-align: right;
 }
 section input {
@@ -99,7 +101,7 @@ section input {
   width: fit-content;
 }
 section table {
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100%;
   text-align: center;
 }
@@ -118,12 +120,12 @@ section .controlls {
   justify-content: center;
   align-items: center;
   justify-content: space-evenly;
-  margin: 15px 0;
+  margin: 10px 0;
   padding-top: 15px;
-  border-top: 2px solid var(--color__hr);
+  border-top: 2px solid var(--color__seciton--border);
 }
 
-.disabled .planner {
+.disabled .basics {
   display: none;
 }
 .disabled .overview {
