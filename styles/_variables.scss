@@ -7,9 +7,6 @@
   /* basics */
   --color__background: var(--color__one);
   --color__text: var(--color__three);
-  /* header */
-  --color__header--background: var(--color__three);
-  --color__header--text: var(--color__one);
   /* headings */
   --color__headings--primary: var(--color__one);
   --color__headings--secondary: var(--color__two);
@@ -18,8 +15,4 @@
   /* button*/
   --color__button--primary: var(--color__two);
   --color__button--secondary: var(--color__one);
-
-  /* sizes */
-  --header-height: 100px;
-  --footer-height: 100px;
 }

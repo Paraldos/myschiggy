@@ -7,9 +7,6 @@
   /* basics */
   --color__background: var(--color__one);
   --color__text: var(--color__three);
-  /* header */
-  --color__header--background: var(--color__three);
-  --color__header--text: var(--color__one);
   /* headings */
   --color__headings--primary: var(--color__one);
   --color__headings--secondary: var(--color__two);
@@ -18,22 +15,29 @@
   /* button*/
   --color__button--primary: var(--color__two);
   --color__button--secondary: var(--color__one);
-  /* sizes */
-  --header-height: 100px;
-  --footer-height: 100px;
 }
 
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: var(--header-height);
-  width: 100%;
-  background-color: var(--color__header--background);
-  color: var(--color__header--text);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+h1 {
+  background-color: var(--color__headings--secondary);
+  color: var(--color__headings--primary);
+  padding: 2px 5px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.2rem;
 }
 
 button {
@@ -58,21 +62,34 @@ section {
   margin-top: 15px;
   padding: 0 10px;
 }
+section .section__header {
+  background-color: var(--color__headings--secondary);
+  color: var(--color__headings--primary);
+  padding: 2px 5px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  width: 100%;
+}
 section .planner {
-  text-align: center;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 10px;
   padding-bottom: 15px;
   border-bottom: 2px solid var(--color__hr);
-}
-section .planner div {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   gap: 15px;
 }
-section .planner__input {
+section .planner div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  width: 100%;
+  align-items: center;
+}
+section .planner div h3 {
+  text-align: right;
+}
+section input {
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   font-size: 1.5rem;
   border: 2px solid var(--color__button--primary);
@@ -130,34 +147,10 @@ body {
   background-color: var(--color__background);
   color: var(--color__text);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  padding-top: var(--header-height);
   min-height: 100vh;
 }
 
 main {
   position: relative;
-  min-height: calc(100vh - var(--header-height));
-}
-
-h1,
-h2,
-h3 {
-  text-align: center;
-}
-
-h1 {
-  background-color: var(--color__headings--secondary);
-  color: var(--color__headings--primary);
-  padding: 2px 5px;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-}
-
-h2 {
-  font-size: 1.4rem;
-  text-transform: uppercase;
-}
-
-h3 {
-  font-size: 1.2rem;
+  min-height: 100vh;
 }/*# sourceMappingURL=main.css.map */

@@ -8,260 +8,89 @@
     <script defer src="./js/main.js"></script>
   </head>
   <body>
-    <header>
-      <p>This is a header</p>
-    </header>
-    <section class="disabled">
-      <!-- header -->
-      <h1>02.11.2023</h1>
-      <!-- planer -->
-      <div class="planner">
-        <div>
-          <h3>Geplante Fahrzeit</h3>
-          <input
-            id="appt-time"
-            type="time"
-            name="appt-time"
-            class="planner__input"
-            value="00:00"
-          />
+    <template class="section-template">
+      <section>
+        <!-- header -->
+        <button class="section__header">Neuer Eintrag</button>
+        <!-- planer -->
+        <div class="planner">
+          <div>
+            <h3>Datum</h3>
+            <input class="section__date-input" type="date" />
+          </div>
+          <div>
+            <h3>Geplante Fahrzeit</h3>
+            <input type="time" class="planner__input" value="00:00" />
+          </div>
+          <div>
+            <h3>Pflichtpausen</h3>
+            <p>30 min</p>
+          </div>
         </div>
-        <div>
-          <h3>Pflichtpausen</h3>
-          <p>30 min</p>
+        <!-- overview -->
+        <table class="overview">
+          <tr>
+            <th>Start</th>
+            <th>Stop</th>
+          </tr>
+          <tr>
+            <td>
+              <input
+                id="appt-time"
+                type="time"
+                name="appt-time"
+                class="planner__input"
+                value="08:15"
+              />
+            </td>
+            <td>
+              <input
+                id="appt-time"
+                type="time"
+                name="appt-time"
+                class="planner__input"
+                value="10:15"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                id="appt-time"
+                type="time"
+                name="appt-time"
+                class="planner__input"
+                value="10:45"
+              />
+            </td>
+            <td>
+              <input
+                id="appt-time"
+                type="time"
+                name="appt-time"
+                class="planner__input"
+                value="12:00"
+              />
+            </td>
+          </tr>
+        </table>
+        <!-- Summe -->
+        <table class="sum">
+          <tr>
+            <th>Summe Fahrzeiten</th>
+            <th>Summe Pausen</th>
+          </tr>
+          <tr>
+            <td>09:30</td>
+            <td>01:15</td>
+          </tr>
+        </table>
+        <!-- controlls -->
+        <div class="controlls">
+          <button class="controlls-btn__start">Start</button>
+          <button class="controlls-btn__stop">Stop</button>
         </div>
-      </div>
-      <!-- overview -->
-      <table class="overview">
-        <tr>
-          <th>Start</th>
-          <th>Stop</th>
-        </tr>
-        <tr>
-          <td>
-            <input
-              id="appt-time"
-              type="time"
-              name="appt-time"
-              class="planner__input"
-              value="08:15"
-            />
-          </td>
-          <td>
-            <input
-              id="appt-time"
-              type="time"
-              name="appt-time"
-              class="planner__input"
-              value="10:15"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input
-              id="appt-time"
-              type="time"
-              name="appt-time"
-              class="planner__input"
-              value="10:45"
-            />
-          </td>
-          <td>
-            <input
-              id="appt-time"
-              type="time"
-              name="appt-time"
-              class="planner__input"
-              value="12:00"
-            />
-          </td>
-        </tr>
-      </table>
-      <!-- Summe -->
-      <table class="sum">
-        <tr>
-          <th>Summe Fahrzeiten</th>
-          <th>Summe Pausen</th>
-        </tr>
-        <tr>
-          <td>09:30</td>
-          <td>01:15</td>
-        </tr>
-      </table>
-      <!-- controlls -->
-      <div class="controlls">
-        <button>Start</button>
-        <button>Stop</button>
-      </div>
-    </section>
-    <section class="disabled">
-      <!-- header -->
-      <h1>03.11.2023</h1>
-      <!-- planer -->
-      <div class="planner">
-        <div>
-          <h3>Geplante Fahrzeit</h3>
-          <input
-            id="appt-time"
-            type="time"
-            name="appt-time"
-            class="planner__input"
-            value="00:00"
-          />
-        </div>
-        <div>
-          <h3>Pflichtpausen</h3>
-          <p>30 min</p>
-        </div>
-      </div>
-      <!-- overview -->
-      <table class="overview">
-        <tr>
-          <th>Start</th>
-          <th>Stop</th>
-        </tr>
-        <tr>
-          <td>
-            <input
-              id="appt-time"
-              type="time"
-              name="appt-time"
-              class="planner__input"
-              value="08:15"
-            />
-          </td>
-          <td>
-            <input
-              id="appt-time"
-              type="time"
-              name="appt-time"
-              class="planner__input"
-              value="10:15"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input
-              id="appt-time"
-              type="time"
-              name="appt-time"
-              class="planner__input"
-              value="10:45"
-            />
-          </td>
-          <td>
-            <input
-              id="appt-time"
-              type="time"
-              name="appt-time"
-              class="planner__input"
-              value="12:00"
-            />
-          </td>
-        </tr>
-      </table>
-      <!-- Summe -->
-      <table class="sum">
-        <tr>
-          <th>Summe Fahrzeiten</th>
-          <th>Summe Pausen</th>
-        </tr>
-        <tr>
-          <td>09:30</td>
-          <td>01:15</td>
-        </tr>
-      </table>
-      <!-- controlls -->
-      <div class="controlls">
-        <button>Start</button>
-        <button>Stop</button>
-      </div>
-    </section>
-    <section class="enabled">
-      <!-- header -->
-      <h1>04.11.2023</h1>
-      <!-- planer -->
-      <div class="planner">
-        <div>
-          <h3>Geplante Fahrzeit</h3>
-          <input
-            id="appt-time"
-            type="time"
-            name="appt-time"
-            class="planner__input"
-            value="00:00"
-          />
-        </div>
-        <div>
-          <h3>Pflichtpausen</h3>
-          <p>30 min</p>
-        </div>
-      </div>
-      <!-- overview -->
-      <table class="overview">
-        <tr>
-          <th>Start</th>
-          <th>Stop</th>
-        </tr>
-        <tr>
-          <td>
-            <input
-              id="appt-time"
-              type="time"
-              name="appt-time"
-              class="planner__input"
-              value="08:15"
-            />
-          </td>
-          <td>
-            <input
-              id="appt-time"
-              type="time"
-              name="appt-time"
-              class="planner__input"
-              value="10:15"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input
-              id="appt-time"
-              type="time"
-              name="appt-time"
-              class="planner__input"
-              value="10:45"
-            />
-          </td>
-          <td>
-            <input
-              id="appt-time"
-              type="time"
-              name="appt-time"
-              class="planner__input"
-              value="12:00"
-            />
-          </td>
-        </tr>
-      </table>
-      <!-- Summe -->
-      <table class="sum">
-        <tr>
-          <th>Summe Fahrzeiten</th>
-          <th>Summe Pausen</th>
-        </tr>
-        <tr>
-          <td>09:30</td>
-          <td>01:15</td>
-        </tr>
-      </table>
-      <!-- controlls -->
-      <div class="controlls">
-        <button>Start</button>
-        <button>Stop</button>
-      </div>
-    </section>
+      </section>
+    </template>
   </body>
 </html>
