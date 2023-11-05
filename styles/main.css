@@ -17,6 +17,22 @@
   --color__seciton--border: var(--color__three);
 }
 
+button {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: transparent;
+  color: var(--color__button--primary);
+  padding: 5px 10px;
+  border: 3px solid var(--color__button--primary);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+button:hover {
+  background-color: var(--color__button--primary);
+  color: var(--color__button--secondary);
+  cursor: pointer;
+}
+
 h1,
 h2,
 h3 {
@@ -38,22 +54,6 @@ h2 {
 
 h3 {
   font-size: 1.2rem;
-}
-
-button {
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  background-color: transparent;
-  color: var(--color__button--primary);
-  padding: 5px 10px;
-  border: 3px solid var(--color__button--primary);
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-button:hover {
-  background-color: var(--color__button--primary);
-  color: var(--color__button--secondary);
-  cursor: pointer;
 }
 
 section {
@@ -135,6 +135,12 @@ section .controlls {
   display: none;
 }
 
+.new-entry {
+  position: relative;
+  display: block;
+  margin: auto;
+}
+
 *,
 *::before,
 *::after {
@@ -148,6 +154,7 @@ body {
   color: var(--color__text);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
+  margin-bottom: 30px;
 }
 
 main {

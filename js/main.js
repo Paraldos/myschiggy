@@ -1,55 +1,22 @@
-let amountOfSections = 3;
-
-class section {
-  constructor() {
-    this.template = document.querySelector(".section-template");
-    this.section = this.createNewHtmlElement();
-    this.header = this.section.querySelector(".section__header");
-    this.dateInput = this.section.querySelector(".basics__date-input");
-    this.addHeaderEvent();
-    this.addDateEvent();
-  }
-
-  createNewHtmlElement() {
-    const fragment = this.template.content.cloneNode(true);
-    document.querySelector("body").appendChild(fragment);
-    const sections = document.querySelectorAll("section");
-    const section = sections[sections.length - 1];
-    return section;
-  }
-
-  addHeaderEvent() {
-    this.header.addEventListener("click", () => {
-      disableAllSections();
-      this.section.classList.remove("disabled");
-    });
-  }
-
-  addDateEvent() {
-    this.dateInput.addEventListener("change", () => {
-      const date = this.dateInput.valueAsNumber;
-      this.header.innerText = new Date(date).toLocaleDateString("de-DE");
-    });
-  }
-}
+import Section from "./section.js";
 
 function init() {
+  const amountOfSections = localStorage.getItem("amountOfSections");
+
   for (let i = 0; i < amountOfSections; i++) {
-    new section();
+    new Section(i);
   }
-  disableAllSections();
-  enableLastSection();
+
+  startSection();
 }
 init();
 
-function disableAllSections() {
+function startSection() {
   const sections = document.querySelectorAll("section");
+  if (sections.length < 1) return;
+  console.log(sections.length);
   sections.forEach((section) => {
     section.classList.add("disabled");
   });
-}
-
-function enableLastSection() {
-  const sections = document.querySelectorAll("section");
   sections[sections.length - 1].classList.remove("disabled");
 }
