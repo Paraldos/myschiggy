@@ -1,0 +1,35 @@
+header,
+footer {
+  position: fixed;
+  width: 100%;
+  height: var(--height__header);
+  z-index: var(--z-index__header);
+
+  background-color: var(--color__header-background);
+  color: var(--color__header-contrast);
+
+  padding: 10px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+header {
+  inset: 0;
+}
+
+footer {
+  bottom: 0;
+  left: 0;
+  @include flexCenter;
+
+  .footer__new-entry-btn {
+    position: relative;
+    display: block;
+    margin: auto;
+
+    color: var(--color__header-contrast);
+    border-color: var(--color__header-contrast);
+  }
+}

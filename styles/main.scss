@@ -1,9 +1,9 @@
-@import "./variables";
-@import "./mixins";
-@import "./button";
-@import "./headings";
-@import "./section";
-@import "./newEntry";
+@import "./variables/variables";
+@import "./variables/mixins";
+@import "./components/button";
+@import "./components/headings";
+@import "./components/section";
+@import "./components/headerAndFooter";
 
 *,
 *::before,
@@ -18,23 +18,9 @@ body {
   color: var(--color__text);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
-  margin-bottom: 30px;
 }
 
 main {
   position: relative;
-  min-height: 100vh;
-}
-
-header {
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--color__headings--secondary);
-  color: var(--color__headings--primary);
-  padding: 10px;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 500;
-  text-transform: uppercase;
+  margin: calc(var(--size__header-height) + 15px) 0;
 }

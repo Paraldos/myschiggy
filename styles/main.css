@@ -1,5 +1,5 @@
 :root {
-  /* ====================== colors ====================== */
+  /* ====================== colors */
   --color__one: #f1f6f9;
   --color__two: #394867;
   --color__three: #212a3e;
@@ -7,6 +7,9 @@
   /* basics */
   --color__background: var(--color__one);
   --color__text: var(--color__three);
+  /* header and footer */
+  --color__header-background: var(--color__two);
+  --color__header-contrast: var(--color__one);
   /* headings */
   --color__headings--primary: var(--color__one);
   --color__headings--secondary: var(--color__two);
@@ -15,6 +18,10 @@
   --color__button--secondary: var(--color__one);
   /* section */
   --color__seciton--border: var(--color__three);
+  /* ====================== z-index */
+  --z-index__header: 100;
+  /* ====================== sizes */
+  --height__header: 75px;
 }
 
 button {
@@ -135,10 +142,38 @@ section .controlls {
   display: none;
 }
 
-.new-entry {
+header,
+footer {
+  position: fixed;
+  width: 100%;
+  height: var(--height__header);
+  z-index: var(--z-index__header);
+  background-color: var(--color__header-background);
+  color: var(--color__header-contrast);
+  padding: 10px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+header {
+  inset: 0;
+}
+
+footer {
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .footer__new-entry-btn {
   position: relative;
   display: block;
   margin: auto;
+  color: var(--color__header-contrast);
+  border-color: var(--color__header-contrast);
 }
 
 *,
@@ -154,23 +189,9 @@ body {
   color: var(--color__text);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
-  margin-bottom: 30px;
 }
 
 main {
   position: relative;
-  min-height: 100vh;
-}
-
-header {
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--color__headings--secondary);
-  color: var(--color__headings--primary);
-  padding: 10px;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 500;
-  text-transform: uppercase;
+  margin: calc(var(--size__header-height) + 15px) 0;
 }/*# sourceMappingURL=main.css.map */
