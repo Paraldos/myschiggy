@@ -1,12 +1,15 @@
 import Section from "./section.js";
 
+let entries = [
+  { number: 0, dates: new Date("2023-11-04") },
+  { number: 1, dates: new Date("2023-11-05") },
+];
+
 function init() {
   const amountOfSections = localStorage.getItem("amountOfSections");
-
-  for (let i = 0; i < amountOfSections; i++) {
-    new Section(i);
-  }
-
+  entries.forEach((entry) => {
+    new Section(entry);
+  });
   startSection();
 }
 init();
@@ -14,7 +17,7 @@ init();
 function startSection() {
   const sections = document.querySelectorAll("section");
   if (sections.length < 1) return;
-  console.log(sections.length);
+  // ========================
   sections.forEach((section) => {
     section.classList.add("disabled");
   });

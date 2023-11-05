@@ -1,31 +1,40 @@
 export default class Section {
-  constructor(i) {
-    this.template = document.querySelector(".section-template");
-    this.section = this.createNewHtmlElement();
+  constructor(entry) {
+    this.entry = entry;
+    this.section = this.createHtmlElement();
     this.header = this.section.querySelector(".section__header");
     this.dateInput = this.section.querySelector(".basics__date-input");
-    this.addHeaderEvent();
-    this.addDateEvent();
+    this.headerEvent();
+    this.dateEvent();
   }
 
-  createNewHtmlElement() {
-    const fragment = this.template.content.cloneNode(true);
+  createHtmlElement() {
+    // create element
+    const template = document.querySelector(".section-template");
+    const fragment = template.content.cloneNode(true);
+    // append element
     document.querySelector("main").appendChild(fragment);
+    // get element
     const sections = document.querySelectorAll("section");
     const section = sections[sections.length - 1];
+    // return element
     return section;
   }
 
-  addHeaderEvent() {
+  headerEvent() {
     this.header.addEventListener("click", () => {
       this.disableAllSections();
       this.section.classList.remove("disabled");
     });
   }
 
-  addDateEvent() {
+  dateEvent() {
     this.dateInput.addEventListener("change", () => {
+      // get current date
       const date = this.dateInput.valueAsNumber;
+      // update object
+      this.entry.date = date;
+      // update display
       this.header.innerText = new Date(date).toLocaleDateString("de-DE");
     });
   }
