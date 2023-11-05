@@ -1,9 +1,9 @@
-section {
+.section {
   max-width: 970px;
   margin: auto;
   margin-top: 15px;
 
-  .section__header {
+  &__header {
     background-color: var(--color__headings--secondary);
     color: var(--color__headings--primary);
     padding: 2px 5px;
@@ -12,12 +12,13 @@ section {
     width: 100%;
   }
 
-  .basics {
-    padding-bottom: 15px;
-    border-bottom: 2px solid var(--color__seciton--border);
+  &__basics {
     @include flexCenter;
     flex-direction: column;
     gap: 15px;
+
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--color__seciton--border);
 
     & div {
       @include flexCenter;
@@ -31,37 +32,7 @@ section {
     }
   }
 
-  input {
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    font-size: 1.5rem;
-    border: 2px solid var(--color__button--primary);
-    border-radius: 0;
-    padding: 5px 10px;
-    background-color: transparent;
-    color: var(--color__button--primary);
-    width: fit-content;
-  }
-
-  table {
-    margin-top: 10px;
-    width: 100%;
-    text-align: center;
-
-    th,
-    td {
-      width: 50%;
-    }
-
-    th {
-      font-size: 1.2rem;
-    }
-
-    td {
-      padding: 5px 0;
-    }
-  }
-
-  .controlls {
+  &__controlls {
     @include flexCenter;
     justify-content: space-evenly;
     margin: 10px 0;
@@ -72,13 +43,13 @@ section {
 }
 
 .disabled {
-  .basics {
+  .section__basics {
     display: none;
   }
-  .overview {
+  .section__overview {
     display: none;
   }
-  .controlls {
+  .section__controlls {
     display: none;
   }
 }

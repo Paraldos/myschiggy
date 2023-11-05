@@ -1,0 +1,18 @@
+table {
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+
+  th,
+  td {
+    width: 50%;
+  }
+
+  th {
+    font-size: 1.2rem;
+  }
+
+  td {
+    padding: 5px 0;
+  }
+}

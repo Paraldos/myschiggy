@@ -1,7 +1,8 @@
 @import "./variables/variables";
 @import "./variables/mixins";
 @import "./components/button";
-@import "./components/headings";
+@import "./components/input";
+@import "./components/table";
 @import "./components/section";
 @import "./components/headerAndFooter";
 
@@ -22,5 +23,29 @@ body {
 
 main {
   position: relative;
-  margin: calc(var(--size__header-height) + 15px) 0;
+  margin: var(--height__header) 0;
+  padding: 15px 0;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+h1 {
+  background-color: var(--color__headings--secondary);
+  color: var(--color__headings--primary);
+  padding: 2px 5px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.2rem;
 }

@@ -40,63 +40,7 @@ button:hover {
   cursor: pointer;
 }
 
-h1,
-h2,
-h3 {
-  text-align: center;
-}
-
-h1 {
-  background-color: var(--color__headings--secondary);
-  color: var(--color__headings--primary);
-  padding: 2px 5px;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-}
-
-h2 {
-  font-size: 1.4rem;
-  text-transform: uppercase;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-section {
-  max-width: 970px;
-  margin: auto;
-  margin-top: 15px;
-}
-section .section__header {
-  background-color: var(--color__headings--secondary);
-  color: var(--color__headings--primary);
-  padding: 2px 5px;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  width: 100%;
-}
-section .basics {
-  padding-bottom: 15px;
-  border-bottom: 2px solid var(--color__seciton--border);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 15px;
-}
-section .basics div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  width: 100%;
-  align-items: center;
-}
-section .basics div h3 {
-  text-align: right;
-}
-section input {
+input {
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   font-size: 1.5rem;
   border: 2px solid var(--color__button--primary);
@@ -107,22 +51,57 @@ section input {
   width: -moz-fit-content;
   width: fit-content;
 }
-section table {
+
+table {
   margin-top: 10px;
   width: 100%;
   text-align: center;
 }
-section table th,
-section table td {
+table th,
+table td {
   width: 50%;
 }
-section table th {
+table th {
   font-size: 1.2rem;
 }
-section table td {
+table td {
   padding: 5px 0;
 }
-section .controlls {
+
+.section {
+  max-width: 970px;
+  margin: auto;
+  margin-top: 15px;
+}
+.section__header {
+  background-color: var(--color__headings--secondary);
+  color: var(--color__headings--primary);
+  padding: 2px 5px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  width: 100%;
+}
+.section__basics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--color__seciton--border);
+}
+.section__basics div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  align-items: center;
+}
+.section__basics div h3 {
+  text-align: right;
+}
+.section__controlls {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,13 +111,13 @@ section .controlls {
   border-top: 2px solid var(--color__seciton--border);
 }
 
-.disabled .basics {
+.disabled .section__basics {
   display: none;
 }
-.disabled .overview {
+.disabled .section__overview {
   display: none;
 }
-.disabled .controlls {
+.disabled .section__controlls {
   display: none;
 }
 
@@ -193,5 +172,29 @@ body {
 
 main {
   position: relative;
-  margin: calc(var(--size__header-height) + 15px) 0;
+  margin: var(--height__header) 0;
+  padding: 15px 0;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+h1 {
+  background-color: var(--color__headings--secondary);
+  color: var(--color__headings--primary);
+  padding: 2px 5px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.2rem;
 }/*# sourceMappingURL=main.css.map */
