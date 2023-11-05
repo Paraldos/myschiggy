@@ -18,19 +18,23 @@
       <section>
         <!-- header -->
         <button class="section__header">Neuer Eintrag</button>
-        <!-- planer -->
-        <div class="basics">
+        <!-- basics -->
+        <div class="section__basics">
           <div>
             <h3>Datum</h3>
-            <input class="basics__date-input" type="date" />
+            <input class="section__input--date" type="date" />
           </div>
           <div>
             <h3>Geplante Fahrzeit</h3>
-            <input type="time" class="basics__input" value="00:00" />
+            <input
+              type="time"
+              class="section__input--planed-time"
+              value="00:00"
+            />
           </div>
           <div>
             <h3>Pflichtpausen</h3>
-            <p>30 min</p>
+            <p class="section__breaks-info">Keine</p>
           </div>
         </div>
         <!-- overview -->
@@ -54,8 +58,8 @@
         </table>
         <!-- controlls -->
         <div class="controlls">
-          <button class="controlls-btn__start">Start</button>
-          <button class="controlls-btn__stop">Stop</button>
+          <button class="">Start</button>
+          <button class="controlls__stop">Stop</button>
         </div>
       </section>
     </template>

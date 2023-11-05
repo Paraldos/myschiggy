@@ -3,9 +3,14 @@ export default class Section {
     this.entry = entry;
     this.section = this.createHtmlElement();
     this.header = this.section.querySelector(".section__header");
-    this.dateInput = this.section.querySelector(".basics__date-input");
+    this.dateInput = this.section.querySelector(".section__input--date");
+    this.planedTimeInput = this.section.querySelector(
+      ".section__input--planed-time"
+    );
+    this.breaksInfo = this.section.querySelector(".section__breaks-info");
     this.headerEvent();
     this.dateEvent();
+    this.basicsTimeEvent();
   }
 
   createHtmlElement() {
@@ -36,6 +41,17 @@ export default class Section {
       this.entry.date = date;
       // update display
       this.header.innerText = new Date(date).toLocaleDateString("de-DE");
+    });
+  }
+
+  basicsTimeEvent() {
+    this.planedTimeInput.addEventListener("change", () => {
+      // get current time
+      const time = this.planedTimeInput.valueAsNumber;
+      // update object
+      this.entry.planedTime = time;
+      // update display
+      this.breaksInfo.innerText = "Blub";
     });
   }
 
