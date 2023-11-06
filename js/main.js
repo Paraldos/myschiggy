@@ -1,8 +1,20 @@
 import Section from "./section.js";
 
 let entries = [
-  { number: 0, dates: new Date("2023-11-04"), planedTime: 0 },
-  { number: 1, dates: new Date("2023-11-05"), planedTime: 0 },
+  {
+    number: 0,
+    dates: new Date("2023-11-04"),
+    planedTime: 0,
+    startTimes: ["08:00"],
+    stopTimes: ["12:00"],
+  },
+  {
+    number: 1,
+    dates: new Date("2023-11-05"),
+    planedTime: 0,
+    startTimes: ["08:00"],
+    stopTimes: ["12:00"],
+  },
 ];
 
 function init() {
