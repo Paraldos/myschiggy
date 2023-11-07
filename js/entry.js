@@ -3,5 +3,11 @@ export default class Entry {
     this.name = name;
     this.date = new Date();
     this.planedTime = 0;
+    this.overviewStarts = [];
+    this.overviewStops = [];
+  }
+
+  setDate(date) {
+    this.date = date;
   }
 }

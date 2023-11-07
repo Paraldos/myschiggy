@@ -5,9 +5,7 @@ let entries = [new Entry("01"), new Entry("02")];
 
 function init() {
   const amountOfSections = localStorage.getItem("amountOfSections");
-  entries.forEach((entry) => {
-    new Section(entry);
-  });
+  entries.forEach((entry) => new Section(entry));
   startSection();
 }
 init();

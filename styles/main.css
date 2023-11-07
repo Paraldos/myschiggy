@@ -81,24 +81,21 @@ table td {
   text-transform: uppercase;
   width: 100%;
 }
-.section__basics {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 15px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid var(--color__seciton--border);
-}
-.section__basics div {
+.section .section__date,
+.section .section__planed-time,
+.section .section__breaks {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
-  width: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
   align-items: center;
+  margin: 0 auto 15px auto;
 }
-.section__basics div h3 {
+.section .section__date h3,
+.section .section__planed-time h3,
+.section .section__breaks h3 {
   text-align: right;
 }
 .section__controlls {
@@ -111,12 +108,10 @@ table td {
   border-top: 2px solid var(--color__seciton--border);
 }
 
-.disabled .section__basics {
-  display: none;
-}
-.disabled .section__overview {
-  display: none;
-}
+.disabled .section__date,
+.disabled .section__planed-time,
+.disabled .section__breaks,
+.disabled .section__overview,
 .disabled .section__controlls {
   display: none;
 }

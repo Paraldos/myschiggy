@@ -6,15 +6,16 @@ export default class Section {
     this.entry = entry;
     this.section = this.getSection();
     this.header = this.section.querySelector(".section__header");
-    this.dateInput = this.section.querySelector(".section__input--date");
+    this.dateInput = this.section.querySelector(".section__date-input");
     this.planedTimeInput = this.section.querySelector(
-      ".section__input--planed-time"
+      ".section__planed-time-input"
     );
     this.breaksInfo = this.section.querySelector(".section__breaks-info");
     this.startBtn = this.section.querySelector(".section__start-btn");
     this.stopBtn = this.section.querySelector(".section__stop-btn");
     /* ===================== */
     this.addOverviewTimes();
+    this.updateDate();
     /* ===================== events */
     this.headerEvent();
     this.dateEvent();
@@ -37,8 +38,10 @@ export default class Section {
     return section;
   }
 
+  /* ===================== overview */
   addOverviewTimes() {
     const timeTemplate = document.querySelector(".section-template--time");
+    console.log(this.entry);
   }
 
   /* ===================== events */
@@ -50,14 +53,7 @@ export default class Section {
   }
 
   dateEvent() {
-    this.dateInput.addEventListener("change", () => {
-      // get current date
-      const date = this.dateInput.valueAsNumber;
-      // update object
-      this.entry.date = date;
-      // update display
-      this.header.innerText = new Date(date).toLocaleDateString("de-DE");
-    });
+    this.dateInput.addEventListener("change", () => this.updateDate());
   }
 
   basicsTimeEvent() {
@@ -67,8 +63,7 @@ export default class Section {
       // update object
       this.entry.planedTime = time;
       // update display
-      this.breaksInfo.innerText = "Blub";
-      console.log(time);
+      this.breaksInfo.innerText = "Give me Text";
     });
   }
 
@@ -84,10 +79,21 @@ export default class Section {
     });
   }
 
+  /* ===================== helper */
   disableAllSections() {
     const sections = document.querySelectorAll("section");
     sections.forEach((section) => {
       section.classList.add("disabled");
     });
+  }
+
+  updateDate() {
+    // get current date
+    let date = this.dateInput.valueAsNumber;
+    if (!date && this.entry.date) date = this.entry.date;
+    // update object
+    this.entry.setDate(date);
+    // update display
+    this.header.innerText = new Date(date).toLocaleDateString("de-DE");
   }
 }

@@ -12,23 +12,17 @@
     width: 100%;
   }
 
-  &__basics {
+  .section__date,
+  .section__planed-time,
+  .section__breaks {
     @include flexCenter;
-    flex-direction: column;
-    gap: 15px;
+    gap: 30px;
+    width: fit-content;
+    align-items: center;
+    margin: 0 auto 15px auto;
 
-    padding-bottom: 15px;
-    border-bottom: 2px solid var(--color__seciton--border);
-
-    & div {
-      @include flexCenter;
-      gap: 30px;
-      width: 100%;
-      align-items: center;
-
-      & h3 {
-        text-align: right;
-      }
+    & h3 {
+      text-align: right;
     }
   }
 
@@ -43,12 +37,10 @@
 }
 
 .disabled {
-  .section__basics {
-    display: none;
-  }
-  .section__overview {
-    display: none;
-  }
+  .section__date,
+  .section__planed-time,
+  .section__breaks,
+  .section__overview,
   .section__controlls {
     display: none;
   }

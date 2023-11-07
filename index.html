@@ -16,36 +16,25 @@
     <!-- Template -->
     <template class="section-template">
       <section class="section">
-        <!-- header -->
         <button class="section__header">Neuer Eintrag</button>
-        <!-- basics -->
-        <div class="section__basics">
-          <div>
-            <h3>Datum</h3>
-            <input class="section__input--date" type="date" />
-          </div>
-          <div>
-            <h3>Geplante Fahrzeit</h3>
-            <input
-              type="time"
-              class="section__input--planed-time"
-              value="00:00"
-            />
-          </div>
-          <div>
-            <h3>Pflichtpausen</h3>
-            <p class="section__breaks-info">Keine</p>
-          </div>
+        <div class="section__date">
+          <h3>Datum</h3>
+          <input class="section__date-input" type="date" />
         </div>
-        <!-- overview -->
+        <div class="section__planed-time">
+          <h3>Geplante Fahrzeit</h3>
+          <input type="time" class="section__planed-time-input" value="00:00" />
+        </div>
+        <div class="section__breaks">
+          <h3>Pflichtpausen</h3>
+          <p class="section__breaks-info">Keine</p>
+        </div>
         <table class="section__overview">
           <tr>
             <th>Start</th>
             <th>Stop</th>
           </tr>
-          <tr></tr>
         </table>
-        <!-- Summe -->
         <table class="section__sum">
           <tr>
             <th>Summe Fahrzeiten</th>
@@ -56,7 +45,6 @@
             <td>01:15</td>
           </tr>
         </table>
-        <!-- controlls -->
         <div class="section__controlls">
           <button class="section__start-btn">Start</button>
           <button class="section__stop-btn">Stop</button>
