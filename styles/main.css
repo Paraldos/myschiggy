@@ -72,6 +72,11 @@ table td {
   max-width: 970px;
   margin: auto;
   margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
 }
 .section__header {
   background-color: var(--color__headings--secondary);
@@ -91,7 +96,6 @@ table td {
   width: -moz-fit-content;
   width: fit-content;
   align-items: center;
-  margin: 0 auto 15px auto;
 }
 .section .section__date h3,
 .section .section__planed-time h3,
@@ -103,6 +107,7 @@ table td {
   justify-content: center;
   align-items: center;
   justify-content: space-evenly;
+  width: 100%;
   margin: 10px 0;
   padding-top: 15px;
   border-top: 2px solid var(--color__seciton--border);
