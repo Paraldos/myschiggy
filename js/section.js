@@ -12,6 +12,9 @@ export default class Section {
       ".section__planed-time-input"
     );
     this.breaksInfo = this.section.querySelector(".section__breaks-info");
+    this.sectionOverviewHeader = this.section.querySelector(
+      ".section__overview--header"
+    );
     this.sectionOverview = this.section.querySelector(".section__overview");
     this.startBtn = this.section.querySelector(".section__start-btn");
     this.stopBtn = this.section.querySelector(".section__stop-btn");
@@ -26,21 +29,18 @@ export default class Section {
     this.stopBtnEvent();
   }
 
-  /* ===================== create */
   createHtmlElement() {
     const sectionTemplate = document.querySelector(".section-template");
     const fragment = sectionTemplate.content.cloneNode(true);
     document.querySelector("main").appendChild(fragment);
   }
 
-  /* ===================== get variables */
   getSection() {
     const sections = document.querySelectorAll("section");
     const section = sections[sections.length - 1];
     return section;
   }
 
-  /* ===================== overview */
   addOverviewTimes() {
     this.entry.sortOverview();
     const max = Math.max(
@@ -48,10 +48,13 @@ export default class Section {
       this.entry.overviewStops.length
     );
     if (max <= 0) {
+      this.sectionOverviewHeader.classList.add("disabled");
       this.sectionOverview.classList.add("disabled");
       return;
+    } else {
+      this.sectionOverviewHeader.classList.remove("disabled");
+      this.sectionOverview.classList.remove("disabled");
     }
-
     for (let i = 0; i < max; i++) {
       let tr = document.createElement("tr");
       this.sectionOverview.appendChild(tr);
@@ -60,17 +63,36 @@ export default class Section {
     }
   }
 
-  addOverviewTd(tr, i, blub) {
+  addOverviewTd(tr, i, type) {
     let td = document.createElement("td");
     tr.appendChild(td);
-    if (this.entry[blub][i]) {
+    if (this.entry[type][i] && this.entry[type][i] != "") {
       let clone = this.timeTemplate.content.cloneNode(true);
       td.appendChild(clone);
-      td.children[0].value = this.entry[blub][i];
+      td.children[0].value = this.entry[type][i];
+      this.overviewTimeEvent(td, i, type);
+      this.overviewDeleteEvent(td, i, type);
     }
   }
 
-  /* ===================== events */
+  overviewTimeEvent(td, i, type) {
+    td.children[0].addEventListener("change", (event) => {
+      this.entry[type][i] = event.target.value;
+      this.entry.update;
+      this.sectionOverview.innerHTML = "";
+      this.addOverviewTimes();
+    });
+  }
+
+  overviewDeleteEvent(td, i, type) {
+    td.children[1].addEventListener("click", () => {
+      this.entry[type].splice(i, 1);
+      this.entry.update;
+      this.sectionOverview.innerHTML = "";
+      this.addOverviewTimes();
+    });
+  }
+
   headerEvent() {
     this.header.addEventListener("click", () => {
       this.disableAllSections();
@@ -85,20 +107,25 @@ export default class Section {
   planedTimeInputEvent() {
     this.planedTimeInput.addEventListener("input", () => {
       const time = this.planedTimeInput.value;
-      this.entry.setPlanedTime(time);
+      this.entry.planedTime = time;
+      this.entry.update();
       this.breaksInfo.innerText = "Give me Text";
     });
   }
 
   startBtnEvent() {
     this.startBtn.addEventListener("click", () => {
-      console.log("start");
+      this.entry.overviewStarts.push(this.getCurrentTime());
+      this.sectionOverview.innerHTML = "";
+      this.addOverviewTimes();
     });
   }
 
   stopBtnEvent() {
     this.stopBtn.addEventListener("click", () => {
-      console.log("stop");
+      this.entry.overviewStops.push(this.getCurrentTime());
+      this.sectionOverview.innerHTML = "";
+      this.addOverviewTimes();
     });
   }
 
@@ -113,7 +140,15 @@ export default class Section {
   updateDate() {
     let date = this.dateInput.valueAsNumber;
     if (!date && this.entry.date) date = this.entry.date;
-    this.entry.setDate(date);
     this.header.innerText = new Date(date).toLocaleDateString("de-DE");
+    this.entry.date = date;
+    this.entry.update();
+  }
+
+  getCurrentTime() {
+    return new Date().toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
   }
 }

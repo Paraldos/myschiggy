@@ -1,7 +1,7 @@
 import Section from "./section.js";
 import Entry from "./entry.js";
 
-let entries = [new Entry("01"), new Entry("02")];
+let entries = [new Entry("01")];
 
 function init() {
   const amountOfSections = localStorage.getItem("amountOfSections");

@@ -119,6 +119,7 @@ table td {
 .disabled .section__date,
 .disabled .section__planed-time,
 .disabled .section__breaks,
+.disabled .section__overview--header,
 .disabled .section__overview,
 .disabled .section__controlls {
   display: none;

@@ -3,11 +3,12 @@ export default class Entry {
     this.name = name;
     this.date = new Date();
     this.planedTime = 0;
-    this.overviewStarts = ["08:00"];
+    this.overviewStarts = [];
     this.overviewStops = [];
   }
 
   sortOverview() {
+    this.overviewStarts = this.overviewStarts.filter((el) => el != "");
     this.overviewStarts.sort();
     this.overviewStops.sort();
     const max = Math.max(this.overviewStarts.length, this.overviewStops.length);
@@ -19,11 +20,7 @@ export default class Entry {
     }
   }
 
-  setDate(date) {
-    this.date = date;
-  }
-
-  setPlanedTime(planedTime) {
-    this.planedTime = planedTime;
+  update() {
+    console.log("update");
   }
 }

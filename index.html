@@ -29,12 +29,13 @@
           <h3>Pflichtpausen</h3>
           <p class="section__breaks-info">Keine</p>
         </div>
-        <table class="section__overview">
+        <table class="section__overview--header">
           <tr>
             <th>Start</th>
             <th>Stop</th>
           </tr>
         </table>
+        <table class="section__overview"></table>
         <table class="section__sum">
           <tr>
             <th>Summe Fahrzeiten</th>
@@ -53,6 +54,7 @@
     </template>
     <template class="section-template--time">
       <input type="time" value="00:00" />
+      <button class="section__delete-time-btn">X</button>
     </template>
   </body>
 </html>
