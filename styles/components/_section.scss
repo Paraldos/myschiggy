@@ -28,6 +28,10 @@
     }
   }
 
+  .disabled {
+    display: none;
+  }
+
   &__controlls {
     @include flexCenter;
     justify-content: space-evenly;

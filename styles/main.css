@@ -102,6 +102,9 @@ table td {
 .section .section__breaks h3 {
   text-align: right;
 }
+.section .disabled {
+  display: none;
+}
 .section__controlls {
   display: flex;
   justify-content: center;

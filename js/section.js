@@ -5,12 +5,14 @@ export default class Section {
     /* ===================== get variables */
     this.entry = entry;
     this.section = this.getSection();
+    this.timeTemplate = document.querySelector(".section-template--time");
     this.header = this.section.querySelector(".section__header");
     this.dateInput = this.section.querySelector(".section__date-input");
     this.planedTimeInput = this.section.querySelector(
       ".section__planed-time-input"
     );
     this.breaksInfo = this.section.querySelector(".section__breaks-info");
+    this.sectionOverview = this.section.querySelector(".section__overview");
     this.startBtn = this.section.querySelector(".section__start-btn");
     this.stopBtn = this.section.querySelector(".section__stop-btn");
     /* ===================== */
@@ -18,10 +20,10 @@ export default class Section {
     this.updateDate();
     /* ===================== events */
     this.headerEvent();
-    this.dateEvent();
+    this.dateInputEvent();
+    this.planedTimeInputEvent();
     this.startBtnEvent();
     this.stopBtnEvent();
-    this.basicsTimeEvent();
   }
 
   /* ===================== create */
@@ -40,8 +42,32 @@ export default class Section {
 
   /* ===================== overview */
   addOverviewTimes() {
-    const timeTemplate = document.querySelector(".section-template--time");
-    console.log(this.entry);
+    this.entry.sortOverview();
+    const max = Math.max(
+      this.entry.overviewStarts.length,
+      this.entry.overviewStops.length
+    );
+    if (max <= 0) {
+      this.sectionOverview.classList.add("disabled");
+      return;
+    }
+
+    for (let i = 0; i < max; i++) {
+      let tr = document.createElement("tr");
+      this.sectionOverview.appendChild(tr);
+      this.addOverviewTd(tr, i, "overviewStarts");
+      this.addOverviewTd(tr, i, "overviewStops");
+    }
+  }
+
+  addOverviewTd(tr, i, blub) {
+    let td = document.createElement("td");
+    tr.appendChild(td);
+    if (this.entry[blub][i]) {
+      let clone = this.timeTemplate.content.cloneNode(true);
+      td.appendChild(clone);
+      td.children[0].value = this.entry[blub][i];
+    }
   }
 
   /* ===================== events */
@@ -52,17 +78,14 @@ export default class Section {
     });
   }
 
-  dateEvent() {
+  dateInputEvent() {
     this.dateInput.addEventListener("change", () => this.updateDate());
   }
 
-  basicsTimeEvent() {
-    this.planedTimeInput.addEventListener("change", () => {
-      // get current time
+  planedTimeInputEvent() {
+    this.planedTimeInput.addEventListener("input", () => {
       const time = this.planedTimeInput.value;
-      // update object
-      this.entry.planedTime = time;
-      // update display
+      this.entry.setPlanedTime(time);
       this.breaksInfo.innerText = "Give me Text";
     });
   }
@@ -88,12 +111,9 @@ export default class Section {
   }
 
   updateDate() {
-    // get current date
     let date = this.dateInput.valueAsNumber;
     if (!date && this.entry.date) date = this.entry.date;
-    // update object
     this.entry.setDate(date);
-    // update display
     this.header.innerText = new Date(date).toLocaleDateString("de-DE");
   }
 }
