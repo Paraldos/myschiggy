@@ -1,8 +1,9 @@
 export default class Section {
   constructor(entry) {
-    this.entry = entry;
+    /* ===================== create */
     this.createHtmlElement();
-    /* ===================== */
+    /* ===================== get variables */
+    this.entry = entry;
     this.section = this.getSection();
     this.header = this.section.querySelector(".section__header");
     this.dateInput = this.section.querySelector(".section__input--date");
@@ -14,7 +15,7 @@ export default class Section {
     this.stopBtn = this.section.querySelector(".section__stop-btn");
     /* ===================== */
     this.addOverviewTimes();
-    /* ===================== */
+    /* ===================== events */
     this.headerEvent();
     this.dateEvent();
     this.startBtnEvent();
@@ -22,22 +23,25 @@ export default class Section {
     this.basicsTimeEvent();
   }
 
+  /* ===================== create */
   createHtmlElement() {
     const sectionTemplate = document.querySelector(".section-template");
     const fragment = sectionTemplate.content.cloneNode(true);
     document.querySelector("main").appendChild(fragment);
   }
 
-  addOverviewTimes() {
-    const timeTemplate = document.querySelector(".section-template--time");
-  }
-
+  /* ===================== get variables */
   getSection() {
     const sections = document.querySelectorAll("section");
     const section = sections[sections.length - 1];
     return section;
   }
 
+  addOverviewTimes() {
+    const timeTemplate = document.querySelector(".section-template--time");
+  }
+
+  /* ===================== events */
   headerEvent() {
     this.header.addEventListener("click", () => {
       this.disableAllSections();

@@ -1,21 +1,7 @@
 import Section from "./section.js";
+import Entry from "./entry.js";
 
-let entries = [
-  {
-    number: 0,
-    dates: new Date("2023-11-04"),
-    planedTime: 0,
-    startTimes: ["08:00"],
-    stopTimes: ["12:00"],
-  },
-  {
-    number: 1,
-    dates: new Date("2023-11-05"),
-    planedTime: 0,
-    startTimes: ["08:00"],
-    stopTimes: ["12:00"],
-  },
-];
+let entries = [new Entry("01"), new Entry("02")];
 
 function init() {
   const amountOfSections = localStorage.getItem("amountOfSections");
