@@ -80,10 +80,14 @@ export default class Section {
 
   updateDate() {
     let date = this.dateInput.valueAsNumber;
-    if (!date && this.entry.date) date = this.entry.date;
+    if (!date && this.entry.date) {
+      date = this.entry.date;
+      this.dateInput.valueAsNumber = date;
+    } else {
+      this.entry.date = date;
+      this.entry.update();
+    }
     this.header.innerText = new Date(date).toLocaleDateString("de-DE");
-    this.entry.date = date;
-    this.entry.update();
   }
 
   getCurrentTime() {
