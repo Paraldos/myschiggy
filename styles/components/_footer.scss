@@ -1,28 +1,22 @@
-header,
 footer {
   position: fixed;
-  width: 100%;
-  height: var(--height__header);
-  z-index: var(--z-index__header);
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-index__footer);
 
-  background-color: var(--color__header-background);
-  color: var(--color__header-contrast);
+  width: 100%;
+  height: var(--height__footer);
+
+  @include flexCenter;
+
+  background-color: var(--color__footer-background);
+  color: var(--color__footer-contrast);
 
   padding: 10px;
   text-align: center;
   font-size: 2rem;
   font-weight: 500;
   text-transform: uppercase;
-}
-
-header {
-  inset: 0;
-}
-
-footer {
-  bottom: 0;
-  left: 0;
-  @include flexCenter;
 
   .footer__new-entry-btn {
     position: relative;

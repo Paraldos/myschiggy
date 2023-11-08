@@ -7,9 +7,9 @@
   /* basics */
   --color__background: var(--color__one);
   --color__text: var(--color__three);
-  /* header and footer */
-  --color__header-background: var(--color__two);
-  --color__header-contrast: var(--color__one);
+  /* footer */
+  --color__footer-background: var(--color__two);
+  --color__footer-contrast: var(--color__one);
   /* headings */
   --color__headings--primary: var(--color__one);
   --color__headings--secondary: var(--color__two);
@@ -20,9 +20,9 @@
   --color__seciton--border: var(--color__three);
 
   /* ====================== z-index */
-  --z-index__header: 100;
+  --z-index__footer: 100;
 
   /* ====================== sizes */
-  --height__header: 75px;
+  --height__footer: 75px;
   --height__btn: 45px;
 }

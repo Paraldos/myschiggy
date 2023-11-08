@@ -7,9 +7,9 @@
   /* basics */
   --color__background: var(--color__one);
   --color__text: var(--color__three);
-  /* header and footer */
-  --color__header-background: var(--color__two);
-  --color__header-contrast: var(--color__one);
+  /* footer */
+  --color__footer-background: var(--color__two);
+  --color__footer-contrast: var(--color__one);
   /* headings */
   --color__headings--primary: var(--color__one);
   --color__headings--secondary: var(--color__two);
@@ -19,9 +19,9 @@
   /* section */
   --color__seciton--border: var(--color__three);
   /* ====================== z-index */
-  --z-index__header: 100;
+  --z-index__footer: 100;
   /* ====================== sizes */
-  --height__header: 75px;
+  --height__footer: 75px;
   --height__btn: 45px;
 }
 
@@ -123,31 +123,23 @@ table td {
   display: none;
 }
 
-header,
 footer {
   position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-index__footer);
   width: 100%;
-  height: var(--height__header);
-  z-index: var(--z-index__header);
-  background-color: var(--color__header-background);
-  color: var(--color__header-contrast);
+  height: var(--height__footer);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color__footer-background);
+  color: var(--color__footer-contrast);
   padding: 10px;
   text-align: center;
   font-size: 2rem;
   font-weight: 500;
   text-transform: uppercase;
-}
-
-header {
-  inset: 0;
-}
-
-footer {
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 footer .footer__new-entry-btn {
   position: relative;
@@ -169,13 +161,7 @@ body {
   background-color: var(--color__background);
   color: var(--color__text);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  min-height: 100vh;
-}
-
-main {
-  position: relative;
-  margin: var(--height__header) 0;
-  padding: 15px 0;
+  padding-bottom: var(--height__footer);
 }
 
 h1,

@@ -3,7 +3,7 @@
 @import "./components/button";
 @import "./components/table";
 @import "./components/section";
-@import "./components/headerAndFooter";
+@import "./components/footer";
 
 *,
 *::before,
@@ -17,13 +17,7 @@ body {
   background-color: var(--color__background);
   color: var(--color__text);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  min-height: 100vh;
-}
-
-main {
-  position: relative;
-  margin: var(--height__header) 0;
-  padding: 15px 0;
+  padding-bottom: var(--height__footer);
 }
 
 h1,
