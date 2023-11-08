@@ -1,18 +1,26 @@
+input,
 button {
   font-size: 1.5rem;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
 
   background-color: transparent;
   color: var(--color__button--primary);
 
-  padding: 5px 10px;
-  border: 3px solid var(--color__button--primary);
+  border: 2px solid var(--color__button--primary);
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+  padding: 5px 10px;
+  width: fit-content;
+  height: var(--height__btn);
 
   &:hover {
     background-color: var(--color__button--primary);
     color: var(--color__button--secondary);
     cursor: pointer;
+  }
+
+  &:active {
+    border-radius: 0;
   }
 }
