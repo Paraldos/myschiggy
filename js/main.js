@@ -1,4 +1,4 @@
-import Section from "./section.js";
+import Section from "./section/section.js";
 import Entry from "./entry.js";
 
 let entries = [new Entry("01")];
