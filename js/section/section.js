@@ -1,11 +1,11 @@
 import Overview from "./overview.js";
+import Header from "./header.js";
 
 export default class Section {
   constructor(entry) {
     this.entry = entry;
     this.createHtmlElement();
     this.section = this.getSection();
-    this.header = this.section.querySelector(".section__header");
     this.dateInput = this.section.querySelector(".section__date-input");
     this.planedTimeInput = this.section.querySelector(
       ".section__planed-time-input"
@@ -14,10 +14,10 @@ export default class Section {
     this.startBtn = this.section.querySelector(".section__start-btn");
     this.stopBtn = this.section.querySelector(".section__stop-btn");
     /* ===================== */
+    this.header = new Header(this.section);
     new Overview(entry, this.section);
     this.updateDate();
     /* ===================== events */
-    this.headerEvent();
     this.dateInputEvent();
     this.planedTimeInputEvent();
     this.startBtnEvent();
@@ -34,13 +34,6 @@ export default class Section {
     const sections = document.querySelectorAll("section");
     const section = sections[sections.length - 1];
     return section;
-  }
-
-  headerEvent() {
-    this.header.addEventListener("click", () => {
-      this.disableAllSections();
-      this.section.classList.remove("disabled");
-    });
   }
 
   dateInputEvent() {
@@ -71,13 +64,6 @@ export default class Section {
   }
 
   /* ===================== helper */
-  disableAllSections() {
-    const sections = document.querySelectorAll("section");
-    sections.forEach((section) => {
-      section.classList.add("disabled");
-    });
-  }
-
   updateDate() {
     let date = this.dateInput.valueAsNumber;
     if (!date && this.entry.date) {
@@ -87,7 +73,7 @@ export default class Section {
       this.entry.date = date;
       this.entry.update();
     }
-    this.header.innerText = new Date(date).toLocaleDateString("de-DE");
+    this.header.changeText(new Date(date).toLocaleDateString("de-DE"));
   }
 
   getCurrentTime() {
