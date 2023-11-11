@@ -26,8 +26,9 @@ export default class Section {
 
   createHtmlElement() {
     const sectionTemplate = document.querySelector(".section-template");
-    const fragment = sectionTemplate.content.cloneNode(true);
-    document.querySelector("main").appendChild(fragment);
+    const clone = sectionTemplate.content.cloneNode(true);
+    let blub = document.querySelector("main").appendChild(clone);
+    console.log(blub.querySelector(".section"));
   }
 
   getSection() {
