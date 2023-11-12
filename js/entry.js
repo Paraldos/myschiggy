@@ -1,7 +1,7 @@
 export default class Entry {
-  constructor(name) {
+  constructor(name, date) {
     this.name = name;
-    this.date = new Date();
+    this.date = date;
     this.planedTime = 0;
     this.overviewStarts = [];
     this.overviewStops = [];

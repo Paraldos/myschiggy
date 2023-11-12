@@ -2,6 +2,7 @@ export default class Header {
   constructor(section) {
     this.section = section;
     this.header = this.section.querySelector(".section__header");
+    this.headerEvent();
   }
 
   headerEvent() {
