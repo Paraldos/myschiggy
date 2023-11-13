@@ -20,6 +20,7 @@ export default class Main {
   }
 
   buildSections() {
+    // ToDo: only during start - how to do it during other uses?
     this.entries.forEach((entry) => new Section(entry));
   }
 
