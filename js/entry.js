@@ -20,6 +20,14 @@ export default class Entry {
     }
   }
 
+  calcPauses() {
+    console.log("pause");
+  }
+
+  calcTotalDriveTime() {
+    console.log("total drive time");
+  }
+
   update() {
     console.log("update");
   }
