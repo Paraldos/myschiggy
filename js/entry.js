@@ -25,7 +25,15 @@ export default class Entry {
   }
 
   calcTotalDriveTime() {
-    console.log("total drive time");
+    let timeTotal = 0;
+    const max = Math.max(this.overviewStarts.length, this.overviewStops.length);
+    for (let i = 0; i < max; i++) {
+      if (this.overviewStarts[i] && this.overviewStops[i]) {
+        let currentTime = this.overviewStops[i] - this.overviewStarts[i];
+        timeTotal += currentTime;
+      }
+    }
+    console.log(timeTotal);
   }
 
   update() {
