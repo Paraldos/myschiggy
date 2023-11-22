@@ -7,34 +7,29 @@ export default class Overview {
       ".section__overview--header"
     );
     this.timeTemplate = document.querySelector(".section-template--time");
-    /* ===================== */
+
     this.updateTable();
   }
 
   updateTable() {
-    this.cleanTable();
-    this.fillTable();
-  }
-
-  cleanTable() {
     this.overview.innerHTML = "";
+    this.fillTable();
+    this.adjustStyling();
   }
 
-  fillTable() {
-    this.entry.sortOverviews();
-    const max = Math.max(
-      this.entry.overviewStarts.length,
-      this.entry.overviewStops.length
-    );
-    if (max <= 0) {
+  adjustStyling() {
+    if (this.entry.getOverviewsMax() <= 0) {
       this.overviewHeader.classList.add("disabled");
       this.overview.classList.add("disabled");
-      return;
     } else {
       this.overviewHeader.classList.remove("disabled");
       this.overview.classList.remove("disabled");
     }
-    for (let i = 0; i < max; i++) {
+  }
+
+  fillTable() {
+    this.entry.sortOverviews();
+    for (let i = 0; i < this.entry.getOverviewsMax(); i++) {
       let tr = document.createElement("tr");
       this.overview.appendChild(tr);
       this.addTd(tr, i, "overviewStarts");
