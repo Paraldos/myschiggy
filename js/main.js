@@ -1,5 +1,5 @@
 import Section from "./section/section.js";
-import Entry from "./entry.js";
+import Entry from "./entry/entry.js";
 
 export default class Main {
   constructor() {

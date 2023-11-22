@@ -21,7 +21,7 @@ export default class Overview {
   }
 
   fillTable() {
-    this.entry.sortOverview();
+    this.entry.sortOverviews();
     const max = Math.max(
       this.entry.overviewStarts.length,
       this.entry.overviewStops.length

@@ -7,7 +7,7 @@ export default class Entry {
     this.overviewStops = [];
   }
 
-  sortOverview() {
+  sortOverviews() {
     this.overviewStarts = this.overviewStarts.filter((el) => el != "");
     this.overviewStarts.sort();
     this.overviewStops.sort();
