@@ -7,12 +7,20 @@ export default class Entry {
     this.overviewStops = [];
   }
 
-  sortOverviews() {
+  removeEmptyElementsFromOverviews() {
     this.overviewStarts = this.overviewStarts.filter((el) => el != "");
+    this.overviewStops = this.overviewStops.filter((el) => el != "");
+  }
+
+  getOverviewsMax() {
+    return Math.max(this.overviewStarts.length, this.overviewStops.length);
+  }
+
+  sortOverviews() {
+    this.removeEmptyElementsFromOverviews();
     this.overviewStarts.sort();
     this.overviewStops.sort();
-    const max = Math.max(this.overviewStarts.length, this.overviewStops.length);
-    for (let i = 0; i < max; i++) {
+    for (let i = 0; i < this.getOverviewsMax(); i++) {
       if (this.overviewStarts[i] > this.overviewStops[i]) {
         this.overviewStarts.push("");
         this.overviewStarts.sort();
@@ -26,14 +34,13 @@ export default class Entry {
 
   calcTotalDriveTime() {
     let timeTotal = 0;
-    const max = Math.max(this.overviewStarts.length, this.overviewStops.length);
-    for (let i = 0; i < max; i++) {
+    for (let i = 0; i < this.getOverviewsMax(); i++) {
       if (this.overviewStarts[i] && this.overviewStops[i]) {
         let currentTime = this.overviewStops[i] - this.overviewStarts[i];
         timeTotal += currentTime;
       }
     }
-    console.log(timeTotal);
+    return timeTotal;
   }
 
   update() {
